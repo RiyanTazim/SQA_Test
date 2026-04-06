@@ -1,4 +1,4 @@
-export class Profile {
+export class Profile extends BasePage {
     constructor(page) {
         this.page = page;
 
