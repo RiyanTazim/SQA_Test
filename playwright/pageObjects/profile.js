@@ -1,7 +1,9 @@
+import { BasePage } from "./basePage";
+
 export class Profile extends BasePage {
     constructor(page) {
-        this.page = page;
-
+        // this.page = page;
+        super(page);
         this.profileButton = this.page.locator("//a[contains(@href,'account')]");
         this.CreateAccountLink = this.page.getByRole('link', { name: 'Create an account' });
         this.fullNameInputF = this.page.getByRole('textbox', { name: 'Full Name' });

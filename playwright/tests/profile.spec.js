@@ -1,10 +1,11 @@
-import test from "node:test";
+import {test} from "@playwright/test";
 import { Profile } from "../pageObjects/profile";
 
-const profile = new Profile();
+// const profile = new Profile();
 test.describe('Demo Evershop Site Authentication Tests', () => {
     test('Register with valid information', async ({ page }) => {
         const profile = new Profile(page);
+        await page.goto('/');
         await profile.clickOnProfileButton();
         await profile.clickOnCreateAccountLink();
         await profile.fillFullName("Tazim Tazvi");
@@ -16,6 +17,7 @@ test.describe('Demo Evershop Site Authentication Tests', () => {
 
     test('Login with valid credentials', async ({ page }) => {
         const profile = new Profile(page);
+        await page.goto('/');
         await profile.clickOnProfileButton();
         await profile.fillEmail("tazim@me.com");
         await profile.fillPassword("tazim@123");

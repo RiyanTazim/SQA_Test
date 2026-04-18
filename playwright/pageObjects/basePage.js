@@ -1,6 +1,6 @@
 export class BasePage {
     constructor(page) {
-        this.page = new page();
+        this.page = page;
     }
 
 
