@@ -7,13 +7,14 @@ export class Profile extends BasePage {
         this.profileButton = this.page.locator("//a[contains(@href,'account')]");
         this.CreateAccountLink = this.page.getByRole('link', { name: 'Create an account' });
         this.fullNameInputF = this.page.getByRole('textbox', { name: 'Full Name' });
-        this.fullEmailInputF = this.page.getByRole('textbox', { name: 'Full Email' });
-        this.fullPasswordInputF = this.page.getByRole('textbox', { name: 'Full Password' });
+        this.fullEmailInputF = this.page.getByRole('textbox', { name: 'Email' });
+        this.fullPasswordInputF = this.page.getByRole('textbox', { name: 'Password' });
+        this.invalidLoginAlert = this.page.getByText("Invalid email or password");
         this.signUpButton = this.page.getByRole('button', { name: 'Sign Up' });
         this.signInButton = this.page.getByRole('button', { name: 'Sign In' });
     }
 
-    locateButton(buttonName){
+    locateButton(buttonName) {
         return this.page.getByRole('button', { name: buttonName });
     }
 
